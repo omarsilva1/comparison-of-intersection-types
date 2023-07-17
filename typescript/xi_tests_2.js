@@ -45,23 +45,31 @@ var Sigma0 = /** @class */ (function (_super) {
     return Sigma0;
 }(Sigma1));
 // (7) σ1 ≤ σ2, τ1 ≤ τ2 ⇒ σ1 ∩ τ1 ≤ σ2 ∩ τ2
-var left_7 = null;
-var right_7 = left_7;
+function test_7(left) {
+    return left;
+}
 // (8) σ1 ≤ σ2, τ1 ≤ τ2 ⇒ σ1 ∪ τ1 ≤ σ2 ∪ τ2
-var sigma1OrTau1 = null;
-var sigma2OrTau2 = sigma1OrTau1;
+function test_8(left) {
+    return left;
+}
 // (9) σ ≤ τ, τ ≤ ρ ⇒ σ ≤ ρ
-var left_9 = null;
-var right_9 = left_9;
-// 9 (fails with any)
-// any <= number
-var left_9_1 = null;
-var right_9_1 = left_9_1;
+function test_9(left) {
+    return left;
+}
+// (9) fails with any
 // string <= any
-var left_9_2 = null;
-var right_9_2 = left_9_2;
+function test_9_2(left) {
+    return left;
+}
+// any <= number
+function test_9_1(left) {
+    return left;
+}
 // but string <= number not true
-var left_9_3 = right_9_1;
+function test_9_3(left) {
+    return left;
+}
 // (14) σ2 ≤ σ1, τ1 ≤ τ2 ⇒ σ1 → τ1 ≤ σ2 → τ2
-var left_14 = null;
-var right_14 = left_14;
+function test_14(left) {
+    return left;
+}

@@ -1,29 +1,19 @@
-var Sigma = /** @class */ (function () {
-    function Sigma() {
-    }
-    return Sigma;
-}());
-var Tau = /** @class */ (function () {
-    function Tau() {
-    }
-    return Tau;
-}());
-var Rho = /** @class */ (function () {
-    function Rho() {
-    }
-    return Rho;
-}());
-var left = null;
-var right = left;
-// 11 (fails)
-var left_11 = null;
-var right_11 = left_11;
-// 12
-var left_12 = null;
-var right_12 = left_12;
-// 13 (fails)
-var left_13 = null;
-var right_13 = left_13;
+// (10) σ & (τ | ρ) ≤ (σ & τ) | (σ & ρ)
+function test_10(left) {
+    return left;
+}
+// (11) (σ → τ) & (σ → ρ) ≤ σ → (τ & ρ) (fails)
+function test_11(left) {
+    return left;
+}
+// (12) (σ → ρ) & (τ → ρ) ≤ (σ | τ) → ρ
+function test_12(left) {
+    return left;
+}
+// (13) unknown ≤ (unknown → unknown) (fails)
+function test_13(left) {
+    return left;
+}
 // 13 (works)
 function test(params) {
     return 3;

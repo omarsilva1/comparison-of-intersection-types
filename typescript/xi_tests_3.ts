@@ -1,35 +1,27 @@
-class Sigma {
-    sigma: string
-}
-class Tau {
-    tau: string
+// (10) σ & (τ | ρ) ≤ (σ & τ) | (σ & ρ)
+function test_10<Sigma, Tau, Rho>(left: Sigma & (Tau | Rho)): (Sigma & Tau) | (Sigma & Rho) {
+    return left;
 }
 
-class Rho {
-    rho: string
+// (11) (σ → τ) & (σ → ρ) ≤ σ → (τ & ρ) (fails)
+function test_11<Sigma, Tau, Rho>(left: ((a: Sigma) => Tau) & ((a: Sigma) => Rho)): (a: Sigma) => (Tau & Rho) {
+    return left;
 }
 
+// (12) (σ → ρ) & (τ → ρ) ≤ (σ | τ) → ρ
+function test_12<Sigma, Tau, Rho>(left: ((a: Sigma) => Rho) & ((a: Tau) => Rho)): (a: Sigma | Tau) => Rho {
+    return left;
+}
 
-let left: Sigma & (Tau | Rho) = null
-let right: (Sigma & Tau) | (Sigma | Rho) = left
-
-// 11 (fails)
-let left_11: ((a: Sigma) => Tau) & ((a: Sigma) => Rho) = null
-let right_11: (a: Sigma) => (Tau & Rho)= left_11
-
-// 12
-let left_12: ((a: Sigma) => Rho) & ((a: Tau) => Rho) = null
-let right_12: (a: Sigma | Tau) => Rho = left_12
-
-// 13 (fails)
-let left_13: unknown = null
-let right_13: ((a: unknown) => unknown) = left_13
+// (13) unknown ≤ (unknown → unknown) (fails)
+function test_13(left: unknown): (a: unknown) => unknown {
+    return left;
+}
 
 // 13 (works)
-function test(params: unknown):
-    unknown {
-        return 3
-    }
+function test(params: unknown): unknown {
+    return 3
+}
 
 test(test)
 let x : never = test

@@ -15,30 +15,36 @@ class Tau1 extends Tau2 {
 class Sigma0 extends Sigma1 {
     sigma0: string
 }
-
 // (7) σ1 ≤ σ2, τ1 ≤ τ2 ⇒ σ1 ∩ τ1 ≤ σ2 ∩ τ2
-let left_7: Sigma1 & Tau1 = null
-let right_7: Sigma2 & Tau2 = left_7
+function test_7<Sigma1 extends Sigma2, Tau1 extends Tau2, Sigma2, Tau2>(left: Sigma1 & Tau1): Sigma2 & Tau2 {
+    return left;
+}
 
 // (8) σ1 ≤ σ2, τ1 ≤ τ2 ⇒ σ1 ∪ τ1 ≤ σ2 ∪ τ2
-let sigma1OrTau1: Sigma1 | Tau1 = null
-let sigma2OrTau2: Sigma2 | Tau2 = sigma1OrTau1
+function test_8<Sigma1 extends Sigma2, Tau1 extends Tau2, Sigma2, Tau2>(left: Sigma1 | Tau1): Sigma2 | Tau2 {
+    return left;
+}
 
 // (9) σ ≤ τ, τ ≤ ρ ⇒ σ ≤ ρ
-let left_9: Sigma0 = null
-let right_9: Sigma2 = left_9
+function test_9<Sigma extends Tau, Tau extends Rho, Rho>(left: Sigma): Rho {
+    return left;
+}
 
-// 9 (fails with any)
-// any <= number
-let left_9_1: any = null
-let right_9_1: number = left_9_1
+// (9) fails with any
 // string <= any
-let left_9_2: string = null
-let right_9_2: any = left_9_2
+function test_9_2(left: string): any {
+    return left;
+}
+// any <= number
+function test_9_1(left: any): number {
+    return left;
+}
 // but string <= number not true
-let left_9_3: string = right_9_1
-
+function test_9_3(left: string): number {
+    return left;
+}
 
 // (14) σ2 ≤ σ1, τ1 ≤ τ2 ⇒ σ1 → τ1 ≤ σ2 → τ2
-let left_14: ((a: Sigma2) => Tau1) = null
-let right_14: ((a: Sigma1) => Tau2) = left_14
+function test_14<Sigma2 extends Sigma1, Sigma1, Tau1 extends Tau2, Tau2>(left: (a: Sigma1) => Tau1): (a: Sigma2) => Tau2 {
+    return left;
+}

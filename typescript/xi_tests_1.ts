@@ -1,35 +1,42 @@
-type Sigma = { sigma: string };
-type Tau = { tau: string };
-
-
 // (1) σ ≤ σ ∩ σ
-let left_1: Sigma = null;
-let right_1: Sigma & Sigma = left_1;
+function test_1<Sigma>(left: Sigma): Sigma & Sigma {
+    return left;
+}
 
 // (2) σ ∪ σ ≤ σ
-let left_2: Sigma | Sigma = null;
-let right_2: Sigma = left_2;
+function test_2<Sigma>(left: Sigma | Sigma): Sigma {
+    return left;
+}
 
-// (3) σ ∩ τ ≤ σ, σ ∩ τ ≤ τ
-let left_3: Sigma & Tau = null;
-let right_3_1: Sigma = left_3;
-let right_3_2: Tau = left_3;
+// (3.1) σ ∩ τ ≤ σ 
+function test_3_1<Sigma, Tau>(left: Sigma & Tau): Sigma {
+    return left;
+}
 
+// (3.2) σ ∩ τ ≤ τ
+function test_3_2<Sigma, Tau>(left: Sigma & Tau): Tau {
+    return left;
+}
 
-// (4) σ ≤ σ ∪ τ, τ ≤ σ ∪ τ
-let left_4_1: Sigma = null
-let left_4_2: Tau = null
-let right_4_1: Sigma | Tau = left_4_1;
-let right_4_2: Sigma | Tau = left_4_2;
+// (4.1) σ ≤ σ ∪ τ
+function test_4_1<Sigma, Tau>(left: Sigma): Sigma | Tau {
+    return left;
+}
+
+// (4.2) τ ≤ σ ∪ τ
+function test_4_2<Sigma, Tau>(left: Tau): Sigma | Tau {
+    return left;
+}
 
 // (5) σ ≤ ω
-let left_5: Sigma = null
-let omegaFromSigma: unknown = left_5;
+function test_5<Sigma>(left: Sigma): unknown {
+    return left;
+}
 
 // (6) σ ≤ σ
-let left_6: Sigma = null
-let right_6: Sigma = left_6
-
+function test_6<Sigma>(left: Sigma): Sigma {
+    return left;
+}
 
 type Entity = {id: number}
 type Person = Entity & {name: string}
