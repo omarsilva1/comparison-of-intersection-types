@@ -1,5 +1,5 @@
-[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E007] Type Mismatch Error: /home/omar/projects/comparison/scala/src/main/scala/Test3.scala:25:1 [0m[0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m25 |[0m left[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E007] Type Mismatch Error: /home/omar/projects/comparison/scala/src/main/scala/Test3.scala:19:1 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m19 |[0m left[0m
 [0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m ^^^^[0m[0m
 [0m[[0m[31merror[0m] [0m[0m[31m   |[0m Found:    (left : Any)[0m
 [0m[[0m[31merror[0m] [0m[0m[31m   |[0m Required: Any => Any[0m

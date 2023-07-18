@@ -1,20 +1,3 @@
-class Sigma2 {
-    sigma2: string
-}
-class Tau2 {
-    tau2: string
-}
-
-class Sigma1 extends Sigma2 {
-    sigma1: string
-}
-class Tau1 extends Tau2 {
-    tau1: string
-}
-
-class Sigma0 extends Sigma1 {
-    sigma0: string
-}
 // (7) σ1 ≤ σ2, τ1 ≤ τ2 ⇒ σ1 ∩ τ1 ≤ σ2 ∩ τ2
 function test_7<Sigma1 extends Sigma2, Tau1 extends Tau2, Sigma2, Tau2>(left: Sigma1 & Tau1): Sigma2 & Tau2 {
     return left;
