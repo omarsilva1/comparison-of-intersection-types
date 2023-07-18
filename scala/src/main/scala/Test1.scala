@@ -1,11 +1,3 @@
-trait Sigma
-trait Tau
-trait Rho
-
-class SigmaImpl extends Sigma
-class TauImpl extends Tau
-class RhoImpl extends Rho
-
 @main def runTest1: Unit = {
   // (1) σ ≤ σ ∩ σ
   def test_1[Sigma](left: Sigma): Sigma = {
@@ -13,27 +5,37 @@ class RhoImpl extends Rho
   }
 
   // (2) σ ∪ σ ≤ σ
-  val left_2: Sigma | Sigma = new SigmaImpl
-  val right_2: Sigma = left_2
+  def test_2[Sigma](left: Sigma | Sigma): Sigma = {
+    left
+  }
 
-  // (3) σ ∩ τ ≤ σ, σ ∩ τ ≤ τ
-  class SigmaTauImpl extends Sigma with Tau
-  val example_with_intersection: Sigma & Tau = new SigmaTauImpl
-  val example_with_union: Sigma | Tau = new SigmaImpl
-  // val right_3_1: Sigma = left_3
-  // val right_3_2: Tau = left_3
-  
-  // (4) σ ≤ σ ∪ τ, τ ≤ σ ∪ τ
-  val left_4_1: Sigma = new SigmaImpl
-  val left_4_2: Tau = new TauImpl
-  val right_4_1: Sigma | Tau = left_4_1
-  val right_4_2: Sigma | Tau = left_4_2
+  // (3.1) σ ∩ τ ≤ σ 
+  def test_3_1[Sigma, Tau](left: Sigma & Tau): Sigma = {
+    left
+  }
+
+  // (3.2) σ ∩ τ ≤ τ
+  def test_3_2[Sigma, Tau](left: Sigma & Tau): Tau = {
+    left
+  }
+
+  // (4.1) σ ≤ σ ∪ τ
+  def test_4_1[Sigma, Tau](left: Sigma): Sigma | Tau = {
+    left
+  }
+
+  // (4.2) τ ≤ σ ∪ τ
+  def test_4_2[Sigma, Tau](left: Tau): Sigma | Tau = {
+    left
+  }
 
   // (5) σ ≤ ω
-  val left_5: Sigma = new SigmaImpl
-  val omegaFromSigma: Any = left_5
+  def test_5[Sigma](left: Sigma): Any = {
+    left
+  }
 
   // (6) σ ≤ σ
-  val left_6: Sigma = new SigmaImpl
-  val right_6: Sigma = left_6
+  def test_6[Sigma](left: Sigma): Sigma = {
+    left
+  }
 }

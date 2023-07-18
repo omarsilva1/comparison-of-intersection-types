@@ -1,22 +1,21 @@
-import scala.util.Random
-
-trait Sigma3
-trait Tau3
-trait Rho3
-
 @main def runTest3: Unit = {
+// (10) σ & (τ | ρ) ≤ (σ & τ) | (σ & ρ)
+def test_10[Sigma, Tau, Rho](left: Sigma & (Tau | Rho)): (Sigma & Tau) | (Sigma & Rho) = {
+  left
+}
 
-  def right_10(x: (Sigma3 & Tau3) | (Sigma3 & Rho3)): String = "It works!"
+// (11) (σ → τ) & (σ → ρ) ≤ σ → (τ & ρ)
+def test_11[Sigma, Tau, Rho](left: ((Sigma => Tau) & (Sigma => Rho))): Sigma => (Tau & Rho) = {
+ left
+}
 
-  def left_10(x: Sigma3): Sigma3 & (Tau3 | Rho3) = {
-    if (Random.nextBoolean()) new Sigma3 with Tau3 {} 
-    else new Sigma3 with Rho3 {} 
-  }
+// (12) (σ → ρ) & (τ → ρ) ≤ (σ | τ) → ρ
+def test_12[Sigma, Tau, Rho](left: ((Sigma => Rho) & (Tau => Rho))): (Sigma | Tau) => Rho = {
+ left
+}
 
-  val sigma = new Sigma3 {}
-  right_10(left_10(sigma))
-    
-  // (13) ω ≤ ω → ω (fails)
-  val left_13: Any = ()
-  val right_13: Any => Any = left_13
+// (13) Any ≤ (Any -> Any) (fails)
+def test_13(left: Any): Any => Any = {
+ left
+}
 }
