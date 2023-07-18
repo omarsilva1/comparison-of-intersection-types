@@ -1,5 +1,15 @@
-[0m[[0m[33mwarn[0m] [0m[0m[33m[33m-- [E030] Match case Unreachable Warning: /home/omar/projects/scala/src/main/scala/Test4.scala:16:9 [0m[0m[0m
-[0m[[0m[33mwarn[0m] [0m[0m[33m16 |[0m    [33mcase[0m _ : Tau => [33mnew[0m RhoTauImpl {} [0m
-[0m[[0m[33mwarn[0m] [0m[0m[33m[33m   |[0m         ^^^^^^^[0m[0m
-[0m[[0m[33mwarn[0m] [0m[0m[33m   |[0m         Unreachable case[0m
-[0m[[0m[33mwarn[0m] [0m[0mone warning found[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E007] Type Mismatch Error: /home/omar/projects/comparison/scala/src/main/scala/Test1.scala:12:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m12 |[0m    left[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m    ^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m    Found:    (left : Sigma)[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m    Required: Tau[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E007] Type Mismatch Error: /home/omar/projects/comparison/scala/src/main/scala/Test3.scala:21:29 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m21 |[0m  [33mval[0m [36mright_13[0m: [35mAny[0m => [35mAny[0m = left_13[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m                             ^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m                             Found:    (left_13 : Any)[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m                             Required: Any => Any[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m

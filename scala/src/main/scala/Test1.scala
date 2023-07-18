@@ -8,8 +8,9 @@ class RhoImpl extends Rho
 
 @main def runTest1: Unit = {
   // (1) σ ≤ σ ∩ σ
-  val left_1: Sigma = new SigmaImpl
-  val right_1: Sigma & Sigma = left_1
+  def test_1[Sigma](left: Sigma): Sigma = {
+    left
+  }
 
   // (2) σ ∪ σ ≤ σ
   val left_2: Sigma | Sigma = new SigmaImpl

@@ -1,0 +1,16 @@
+[0m[[0m[31merror[0m] [0m[0m/home/omar/projects/comparison/scala/src/main/scala/Test1.scala:9:7: expected start of definition[0m
+[0m[[0m[31merror[0m] [0m[0m@main def runTest1: Unit = {[0m
+[0m[[0m[31merror[0m] [0m[0m      ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/omar/projects/comparison/scala/src/main/scala/Test2.scala:9:7: expected start of definition[0m
+[0m[[0m[31merror[0m] [0m[0m@main def runTest2: Unit = {[0m
+[0m[[0m[31merror[0m] [0m[0m      ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/omar/projects/comparison/scala/src/main/scala/Test3.scala:7:7: expected start of definition[0m
+[0m[[0m[31merror[0m] [0m[0m@main def runTest3: Unit = {[0m
+[0m[[0m[31merror[0m] [0m[0m      ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/omar/projects/comparison/scala/src/main/scala/Test4.scala:3:29: ';' expected but ',' found.[0m
+[0m[[0m[31merror[0m] [0m[0mclass RhoTauImpl extends Rho, Tau[0m
+[0m[[0m[31merror[0m] [0m[0m                            ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/omar/projects/comparison/scala/src/main/scala/Test4.scala:5:7: expected start of definition[0m
+[0m[[0m[31merror[0m] [0m[0m@main def runTest4: Unit = {[0m
+[0m[[0m[31merror[0m] [0m[0m      ^[0m
+[0m[[0m[31merror[0m] [0m[0m5 errors found[0m
